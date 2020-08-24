@@ -1,9 +1,5 @@
 // Setup empty JS object to act as endpoint for all routes
-//cd xampp/htdocs/Udacity/weather-journal-app
-//node server.js
-
 projectData = {};
-
 
 // Require Express to run server and routes
 const express = require('express');
@@ -24,23 +20,21 @@ app.use(express.static('website'));
 
 // Setup Server
 const port = 8000;
+//type 'node server.js' in cmd terminal to run local server 
+app.listen(port, () => console.log(`Running on port: ${port}`));
 
-const server = app.listen(port, () => console.log(`Running on port: ${port}`));
-
+//handles post request
 const postWeather = (req, res) => {
     
     newData = req.body;
     projectData = newData;
 
     console.log(projectData);   
-/* 
-    projectData['temperature'] = newData.main['temp'];
-    projectData['today'] = newData.today;
-    projectData['feelings'] = newData.feelings;
-*/
+
     res.send('Succesful post!');
 };
 
+//returns posted data back to user
 const getWeather = (req, res) => {
     res.send(projectData);
 };
