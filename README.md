@@ -11,7 +11,7 @@ Uses OpenWeatherMap API to show weather data based on zip code entered by user.
 ### Install Body-Parser
 `npm install body-parser`
 
-### Cors
+### Install Cors
 `npm install cors`
 
 ## Usage
